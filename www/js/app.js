@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('xcal', ['ionic', 'firebase', 'xcal.services', 'xcal.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
-  
+
   $stateProvider
   .state('app', {
       url: "/app",
@@ -13,17 +13,26 @@ angular.module('xcal', ['ionic', 'firebase', 'xcal.services', 'xcal.controllers'
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
-    .state('login', {
+    .state('app.login', {
         url: "/login",
-        templateUrl: "templates/login-view.html",
-        controller: 'LoginCtrl'
+        views: {
+            'menuContent': {
+                templateUrl: "templates/login-view.html",
+                controller: 'LoginCtrl'
+            }
+        }
+
     })
-    .state('signup', {
+    .state('app.signup', {
       url: '/signup',
-      templateUrl: 'templates/signup.html',
-      controller: 'SignupCtrl'
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/signup.html',
+          controller: 'SignupCtrl'
+        }
+      }
     });
-    
+
     $urlRouterProvider.otherwise("/app/signup");
 })
 .run(function($ionicPlatform) {

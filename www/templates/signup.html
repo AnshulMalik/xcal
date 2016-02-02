@@ -5,23 +5,24 @@
 
     <ion-content>
       <div class="list">
+          <div class="item item-divider" ng-show="message">{{ message }}</div>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Name</span>
-          <input type="text" placeholder="John" ng-model="data.user.name">
+          <input type="text" placeholder="John" ng-model="user.fullname">
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Email</span>
-          <input type="text" placeholder="asdf@ghj.kl" ng-model="data.user.email">
+          <input type="text" placeholder="asdf@ghj.kl" ng-model="user.email">
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Password</span>
-          <input type="password" placeholder="Password" ng-model="data.user.password">
+          <input type="password" placeholder="Password" ng-model="user.password">
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Confirm Password</span>
-          <input type="password" placeholder="" ng-model="data.user.confirmPassword">
+          <input type="password" placeholder="" ng-model="user.confirmPassword">
         </label>
-        <button class="button button-block button-positive">
+        <button class="button button-block button-positive" ng-click="signup()">
           Signup
         </button>
       </div>
