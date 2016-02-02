@@ -1,15 +1,17 @@
 angular.module('xcal.controllers', [])
-    .controller('AppCtrl', appCtrl);
+    .controller('AppCtrl', appCtrl)
+    .controller('LoginCtrl', loginCtrl)
+    .controller('SignupCtrl', signupCtrl);
     
     
-function appCtrl($scope, Items) {
-    $scope.items = Items;
-    $scope.addItem = function() {
-        var name = prompt("What do you need to buy?");
-        if (name) {
-          $scope.items.$add({
-            "name": name
-          });
-        }
-    };
+function appCtrl($scope) {
+    
+}
+
+function loginCtrl($scope) {
+    
+}
+
+function signupCtrl($scope) {
+    
 }

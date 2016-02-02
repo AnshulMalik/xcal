@@ -1,0 +1,28 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7"></ion-nav-bar>
+        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">Menu</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close ui-sref="app.home" ui-sref-opts="{reload: true}">
+          Home
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.customers" ui-sref-opts="{reload: true}">
+          Customers
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="login" ui-sref-opts="{reload: true}" >
+          Login
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.logout" ui-sref-opts="{reload: true}" >
+          Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

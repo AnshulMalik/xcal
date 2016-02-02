@@ -4,7 +4,28 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('xcal', ['ionic', 'firebase', 'xcal.services', 'xcal.controllers'])
-
+.config(function($stateProvider, $urlRouterProvider) {
+  
+  $stateProvider
+  .state('app', {
+      url: "/app",
+      abstract: true,
+      templateUrl: "templates/menu.html",
+      controller: 'AppCtrl'
+    })
+    .state('login', {
+        url: "/login",
+        templateUrl: "templates/login-view.html",
+        controller: 'LoginCtrl'
+    })
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'templates/signup.html',
+      controller: 'SignupCtrl'
+    });
+    
+    $urlRouterProvider.otherwise("/app/signup");
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
