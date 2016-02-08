@@ -58,6 +58,15 @@ angular.module('xcal', ['ionic', 'ngCordova', 'firebase', 'xcal.services', 'xcal
           controller: 'SignupCtrl'
         }
       }
+    })
+    .state('app.signup1', {
+      url: '/signup1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/signup1.html',
+          controller: 'SignupCtrl'
+        }
+      }
     });
 
     $urlRouterProvider.otherwise("/app/signup");

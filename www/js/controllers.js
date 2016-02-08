@@ -127,6 +127,11 @@ function logoutCtrl($rootScope, User, $state, $scope) {
 }
 
 function signupCtrl($scope, User) {
+    $scope.$on('ionicView.enter', function() {
+        $scope.message = "";
+        clearForm();
+    });
+
     var clearForm = function() {
         $scope.user.password = "";
         $scope.user.email = "";
