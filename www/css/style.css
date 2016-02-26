@@ -1,1 +1,29 @@
 /* Empty. Add your own CSS if you like */
+ion-content {
+	/*background: url('../img/ionic.png') no-repeat center center fixed;
+	background-attachment: fixed;
+	margin-top:40px;
+	*/
+}
+.nav-title-slide-ios7, header {
+	background-color: #665631!important;
+}
+.bar.bar-stable .title, .back-text {
+	color: #E2E1E1;
+}
+.bar-stable .button.button-clear {
+	color: #ccc;
+}
+.ng-invalid {
+	border-color: #f00 !important;
+}
+#loginButtons {
+	margin-top:290px;
+}
+.button-custom {
+	background-color:#665631 !important;
+	color: #fff !important;	
+}
+form {
+	background-color: #fff;
+}

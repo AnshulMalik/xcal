@@ -1,0 +1,12 @@
+<ion-view title="My Orders">
+    <ion-content>
+      <ion-list>
+        <ion-item class="item item-thumbnail-left" ng-repeat="order in orders">
+            <img src="img/thumbnail.jpg">
+                <p>{{ order.model }} | {{ order.manuf }}</p>
+                <p>From: {{ order.location }}</p>
+                <p>{{ order.rentData.startTime.hours}}: {{ order.rentData.startTime.minutes}} - {{ order.rentData.endTime.hours}}:{{ order.rentData.endTime.minutes}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+</ion-view>

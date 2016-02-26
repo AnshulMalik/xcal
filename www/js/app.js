@@ -1,9 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('xcal', ['ionic', 'ngCordova', 'firebase', 'xcal.services', 'xcal.controllers'])
+angular.module('xcal', ['ionic', 'ngCordova', 'ionic-timepicker', 'firebase', 'xcal.services', 'xcal.controllers', 'angularPayments'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
@@ -13,14 +8,68 @@ angular.module('xcal', ['ionic', 'ngCordova', 'firebase', 'xcal.services', 'xcal
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
+    .state('app.profile', {
+      url: '/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profile.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
+    .state('app.addBalance', {
+        url: '/addBalance',
+        views: {
+            'menuContent' : {
+                templateUrl: 'templates/add-balance.html',
+                controller: 'PaymentCtrl'
+            }
+        }
+    })
     .state('app.addVehicle', {
-        url: 'addVehicle',
+        url: '/addVehicle',
         views: {
             'menuContent' : {
                 templateUrl: 'templates/add-vehicle.html',
                 controller: 'VehicleCtrl'
             }
         }
+    })
+    .state('app.addVehicle2', {
+        url: '/addVehicle2',
+        views: {
+            'menuContent' : {
+                templateUrl: 'templates/add-vehicle2.html',
+                controller: 'VehicleCtrl'
+            }
+        }
+    })
+    .state('app.addVehicle3', {
+        url: '/addVehicle3',
+        views: {
+            'menuContent' : {
+                templateUrl: 'templates/add-vehicle3.html',
+                controller: 'VehicleCtrl'
+            }
+        }
+    })
+    .state('app.afterSearchDetails', {
+      url: '/afterSearchDetails',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/after-search-details.html',
+          controller: 'VehicleCtrl'
+        }
+      }
+    })
+    .state('app.cardDetails', {
+      url: '/cardDetails',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/card-details.html',
+          controller: 'PaymentCtrl'
+        }
+      }
     })
     .state('app.dash', {
         url: '/dash',
@@ -50,6 +99,15 @@ angular.module('xcal', ['ionic', 'ngCordova', 'firebase', 'xcal.services', 'xcal
             }
         }
     })
+    .state('app.myOrders', {
+        url: '/myOrders',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/my-orders.html',
+                controller: 'DashCtrl'
+            }
+        }
+    })
     .state('app.signup', {
       url: '/signup',
       views: {
@@ -67,12 +125,47 @@ angular.module('xcal', ['ionic', 'ngCordova', 'firebase', 'xcal.services', 'xcal
           controller: 'SignupCtrl'
         }
       }
+    })
+    .state('app.vehicle-search-results', {
+      url: '/vehicleSearchResults',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/vehicle-search-results.html',
+          controller: 'VehicleCtrl'
+        }
+      }
+    })
+    .state('app.wallet', {
+        url: '/wallet',
+        views: {
+            'menuContent' : {
+                templateUrl: 'templates/wallet.html',
+                controller: 'PaymentCtrl'
+            }
+        }
+    })
+    .state('app.selectSearchVehicleType', {
+      url: '/selectSearchVehicleType',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/select-vehicle-type.html',
+          controller: 'VehicleCtrl'
+        }
+      }
+    })
+    .state('landing', {
+      url: '/landing',
+      templateUrl: 'templates/landing.html',
+      controller: 'AppCtrl'
+      
     });
 
-    $urlRouterProvider.otherwise("/app/signup");
+    $urlRouterProvider.otherwise("/landing");
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+
+    Stripe.setPublishableKey('pk_test_0kQud90mccD8nyDvovjLrTXY');
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)

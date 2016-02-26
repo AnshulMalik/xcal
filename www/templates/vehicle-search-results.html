@@ -1,0 +1,13 @@
+<ion-view title="Select a Ride">
+    <ion-content>
+      <ion-list>
+       	<ion-item class="item item-thumbnail-left item-icon-right" ng-repeat="vehicle in searchResults" ng-click="loadAfterSearchResults(vehicle)">
+       		<img src="img/thumbnail.jpg">
+		    <h2>{{ vehicle.model }}</h2>
+		    <p>  {{ vehicle.manuf }}</p>
+		    <p>Rate: &#8377;{{ vehicle.rate }} /hr</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+       	</ion-item> 
+      </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view title="Step 2">
+    <ion-content>
+      <div class="list">
+          <div class="item item-divider" ng-show="message">{{ message }}</div>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Hour Rate </span>
+          <input type="text" placeholder="60" ng-model="vehicle.rate">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label"> Mileage </span>
+          <input type="text" placeholder="Alto" ng-model="vehicle.mileage">
+        </label>
+
+        <div class="row padding">
+          <span class="input-label"> Shift timing: </span>
+          <div class="col 33">
+            <ionic-timepicker input-obj="startTimePickerObject">
+              <button class="button button-block button-positive overflowShow">
+                <standard-time-meridian etime='startTimePickerObject.inputEpochTime'>Begin</standard-time-meridian>
+              </button>
+            </ionic-timepicker>
+          </div>
+          <div class="col 33">
+            <ionic-timepicker input-obj="endTimePickerObject">
+              <button class="button button-block button-positive overflowShow">
+                <standard-time-meridian etime='endTimePickerObject.inputEpochTime'>End</standard-time-meridian>
+              </button>
+            </ionic-timepicker>
+          </div>
+        </div>
+        <button class="button button-block button-outline button-custom" ng-click="addVehicleStep3()">
+          Next
+        </button>
+      </div>
+    </ion-content>
+</ion-view>

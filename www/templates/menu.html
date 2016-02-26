@@ -1,21 +1,42 @@
 <ion-side-menus enable-menu-with-back-views="false">
     <ion-side-menu-content>
-        <ion-nav-bar class="bar-stable nav-title-slide-ios7"></ion-nav-bar>
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+          <ion-nav-back-button>
+          </ion-nav-back-button>
+
+          <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            </button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
         <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
     </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <header class="bar bar-header bar-stable">
+    <header class="bar bar-header bar-positive">
       <h1 class="title">Menu</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close ui-sref="app.dash" ui-sref-opts="{reload: true}">
-          Home
+        <ion-item nav-clear menu-close ui-sref="app.dash" ng-show="authData" ui-sref-opts="{reload: true}">
+          Dashboard
         </ion-item>
-        <ion-item nav-clear menu-close ui-sref="app.login" ng-hide="authData" ui-sref-opts="{reload: true}" >
+        <ion-item nav-clear menu-close ui-sref="app.addVehicle" ng-show="authData" ui-sref-opts="{reload: true}">
+          My Vehicles
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.wallet" ng-hide="authData">
+          My Wallet
+        </ion-item>
+
+
+        <ion-item nav-clear menu-close ui-sref="app.login" ng-hide="authData">
           Login
         </ion-item>
+
+        <ion-item nav-clear menu-close ui-sref="app.myOrders" ng-show="authData" ui-sref-opts="{reload: true}">
+          My Orders
+        </ion-item>
+
         <ion-item nav-clear menu-close ui-sref="app.logout" ng-show="authData" ui-sref-opts="{reload: true}" >
           Logout
         </ion-item>

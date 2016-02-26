@@ -1,0 +1,32 @@
+<ion-view title="Card Details">
+    <ion-content>
+      <form name="checkoutForm">
+        <div class="item" ng-show="message">{{ message }}</div> 
+        <br />
+        <label class="item item-input">
+          <input ng-model="card.number" name="number" 
+                   placeholder="Card Number" type="text" payments-format="card"/>
+        </label>
+
+        <label class="item item-input">
+            <input ng-model="card.expiry" name="expiry" 
+                   placeholder="Expiry: 12/2033" type="text" payments-format="expiry"/>
+        </label>
+
+
+        <label class="item item-input">
+            <input ng-model="card.cvc" name="cvc"
+                   placeholder="CVC" type="text" payments-format="cvc"/>
+        </label>
+        <br />
+        <br />
+        <center>Amount: &#8377;50</center>
+        <br />
+        <center>
+          <button class="button button-outline button-custom" ng-click="cancel()">Cancel</button>
+          <button class="button button-outline button-positive" ng-click="checkout()" >Checkout</button>
+        </center>
+
+      </form>
+    </ion-content>
+</ion-view>

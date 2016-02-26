@@ -1,0 +1,14 @@
+<ion-view title="Add Money">
+    <ion-content>
+        <div class="item" ng-show="message">{{ message }}</div>
+        <div class="padding">
+        	<label class="item item-input">
+              <input type="text" placeholder="Amount" ng-model="addBalanceObject.amount" required>
+            </label>
+          	<center><button class="button button-outline button-custom" ng-click="addBalance()">Add </button></center>
+
+        </div>
+            
+          
+    </ion-content>
+</ion-view>

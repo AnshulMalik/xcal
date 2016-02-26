@@ -1,0 +1,31 @@
+<ion-view title="Step 1">
+    <ion-content>
+      <div class="list">
+          <div class="item item-divider" ng-show="message">{{ message }}</div>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Select type of Vehicle
+          </div>
+
+          <select ng-model="selectedVehicle" ng-options="vehicle as vehicle.name for vehicle in typeOfVehicles">
+          </select>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Nickname</span>
+          <input type="text" placeholder="My Love" ng-model="vehicle.name">
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Manufacturer</span>
+          <input type="text" placeholder="Maruti" ng-model="vehicle.manuf">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Model</span>
+          <input type="text" placeholder="Alto" ng-model="vehicle.model">
+        </label>
+        <button class="button button-block button-outline button-custom" ng-click="addVehicleStep2()">
+          Next
+        </button>
+      </div>
+    </ion-content>
+</ion-view>

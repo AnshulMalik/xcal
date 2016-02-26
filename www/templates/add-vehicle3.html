@@ -1,0 +1,24 @@
+<ion-view title="Step 3">
+    <ion-content>
+      <div class="item item-divider" ng-show="message">{{ message }}</div>
+      <div class="list">
+
+        
+          <label class="item item-input item-stacked-label col 100">
+            <span class="input-text">Pickup and Drop location: </span>
+            <input type="text" placeholder="H-10" ng-model="vehicle.location"/>
+          </label>
+          
+          <label class="item item-button-right">
+            Weekdays: 
+            <button class="button button-outline button-outline button-custom" ng-click="selectWeekDays()">Select</button>
+          </label>
+
+
+        
+        <button class="button button-block button-outline button-custom" ng-click="addVehicleFinal()">
+          Next
+        </button>
+      </div>
+    </ion-content>
+</ion-view>

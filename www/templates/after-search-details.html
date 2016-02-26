@@ -1,0 +1,15 @@
+<ion-view title="This one">
+    <ion-content>
+      <ion-list>
+        <div class="col 50">
+       		<center><img style="max-width: 300px;" src="img/thumbnail.jpg"></center>
+    		  <h2>{{ afterSearchDetails.model }} Model</h2>
+    		  <p>  {{ afterSearchDetails.manuf }} Manufacturer</p>
+    		  <p>Rate: &#8377;{{ afterSearchDetails.rate }} /hr</p>
+        </div>
+        <div class="col 50">
+          <button class="button button-outline button-positive" ng-click="loadBookPage()">Book</button>
+        </div>
+      </ion-list>
+    </ion-content>
+</ion-view>

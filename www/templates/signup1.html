@@ -1,16 +1,32 @@
 <ion-view title="Signup">
-    <ion-nav-buttons side="left">
-      <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
 
     <ion-content>
       <div class="list">
           <div class="item item-divider" ng-show="message1">{{ message1 }}</div>
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Roll Number</span>
-          <input type="text" placeholder="1140000" ng-model="user.fullname">
+          <div class="row">
+            <div class="col col-50">
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">Roll Number</span>
+                <input type="text" placeholder="1140000" ng-model="user.rollNo" disabled>
+              </label>
+            </div>
+            <div class="col col-50">
+              <button class="button button-block button-calm" ng-click="scanBarCode()">
+                Scan Roll Number
+              </button>
+
+
+          </div>
+        </div>
+        <label class="item item-input item-stacked-label col 100">
+          <span class="input-label">Phone</span>
+          <input type="text" placeholder="9002510000" ng-model="user.phone">
         </label>
-        <button class="button button-block button-positive" ng-click="signup()">
+        <label class="item item-input">
+          Your Pic: 
+          <button class="button button-icon icon ion-camera" ng-click="upload()"></button>
+        </label>
+        <button class="button button-block button-outline button-custom" ng-click="signup1()">
           Signup
         </button>
       </div>
