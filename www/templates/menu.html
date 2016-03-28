@@ -10,13 +10,13 @@
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close ui-sref="app.home" ui-sref-opts="{reload: true}">
+        <ion-item nav-clear menu-close ui-sref="app.dash" ui-sref-opts="{reload: true}">
           Home
         </ion-item>
-        <ion-item nav-clear menu-close ui-sref="app.login" ui-sref-opts="{reload: true}" >
+        <ion-item nav-clear menu-close ui-sref="app.login" ng-hide="authData" ui-sref-opts="{reload: true}" >
           Login
         </ion-item>
-        <ion-item nav-clear menu-close ui-sref="app.logout" ui-sref-opts="{reload: true}" >
+        <ion-item nav-clear menu-close ui-sref="app.logout" ng-show="authData" ui-sref-opts="{reload: true}" >
           Logout
         </ion-item>
       </ion-list>

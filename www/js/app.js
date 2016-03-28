@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('xcal', ['ionic', 'firebase', 'xcal.services', 'xcal.controllers'])
+angular.module('xcal', ['ionic', 'ngCordova', 'firebase', 'xcal.services', 'xcal.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
@@ -12,6 +12,24 @@ angular.module('xcal', ['ionic', 'firebase', 'xcal.services', 'xcal.controllers'
       abstract: true,
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
+    })
+    .state('app.addVehicle', {
+        url: 'addVehicle',
+        views: {
+            'menuContent' : {
+                templateUrl: 'templates/add-vehicle.html',
+                controller: 'VehicleCtrl'
+            }
+        }
+    })
+    .state('app.dash', {
+        url: '/dash',
+        views: {
+            'menuContent' : {
+                templateUrl: 'templates/dash.html',
+                controller: 'DashCtrl'
+            }
+        }
     })
     .state('app.login', {
         url: "/login",
@@ -22,6 +40,15 @@ angular.module('xcal', ['ionic', 'firebase', 'xcal.services', 'xcal.controllers'
             }
         }
 
+    })
+    .state('app.logout', {
+        url: '/logout',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/logout.html',
+                controller: 'LogoutCtrl'
+            }
+        }
     })
     .state('app.signup', {
       url: '/signup',

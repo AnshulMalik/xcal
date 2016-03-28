@@ -4,7 +4,7 @@
     </ion-nav-buttons>
     <ion-content>
         <form class="list">
-            <div class="item item-divider" ng-show="message">{{ message }}</div>
+            <div class="item" ng-show="message">{{ message }}</div>
             <label class="item item-input">
               <input type="text" placeholder="Email" ng-model="user.email" required>
             </label>
@@ -13,6 +13,10 @@
             </label>
             <div class="padding">
               <button class="button button-block button-stable" ng-click="login()">Login</button>
+            </div>
+            <div class="row center-align">OR</div>
+            <div class="padding">
+              <a class="button button-block button-stable" href="#/app/signup">Signup</a>
             </div>
           </form>
     </ion-content>
